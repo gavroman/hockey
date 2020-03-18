@@ -15,9 +15,9 @@
 #### Схематичное изображение хоккейного поля
 Отображается с помощью `SVG`.
 
-![alt text](https://github.com/gavroman/learn_react/blob/master/screenshots/field.png)
+![alt text](https://github.com/gavroman/learn_react/blob/master/public/screenshots/field.png)
 
 #### Рисовалка
 Отображается с помощью `canvas`, библиотека [konva](https://konvajs.org/docs/).
 
-![alt text](https://github.com/gavroman/learn_react/blob/master/screenshots/draw.png)
+![alt text](https://github.com/gavroman/learn_react/blob/master/public/screenshots/draw.png)
