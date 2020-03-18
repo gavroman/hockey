@@ -1,0 +1,36 @@
+.button {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonDefault {
+    height: 50px;
+    width: 100px;
+    color: red;
+    background-color: white;
+    border: solid 5px black;
+}
+
+.buttonMenu {
+    height: 100px;
+    width: 200px;
+    color: #1686fe;
+}
+
+.buttonPlayer {
+    height: 40px;
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.buttonEpisode {
+    height: 40px;
+    width: 100%;
+    background-color: #BABABA;
+    border: solid 1px black;
+    margin-bottom: 5%;
+}

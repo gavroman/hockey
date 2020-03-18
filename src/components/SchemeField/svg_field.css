@@ -1,0 +1,101 @@
+.hidden {
+  display: none;
+}
+
+.gate-line {
+  stroke-width: 0.5px;
+  stroke: #c1272d;
+}
+.center-line {
+  stroke: #c1272d;
+  fill: none;
+  stroke-width: 3px;
+}
+.blue-line {
+  stroke: #3a5095;
+  stroke-width: 3px;
+  fill: #5873a3;
+}
+.field-box {
+  stroke-width: 2px;
+  fill: none;
+  stroke: #000;
+}
+
+.gate {
+  z-index: 20;
+  fill: #4174a7;
+  stroke-width: 0.5px;
+  stroke: #c1272d;
+}
+.gate-gradient {
+  fill: url(#grad3);
+  opacity: 0.43;
+}
+
+.outer-circle-gradient {
+  stroke: url(#grad2);
+  stroke-width: 14px;
+  fill: #fff;
+}
+.outer-circle {
+  stroke: #c1272d;
+  fill: none;
+}
+.face-off-line {
+  stroke-width: 0.5px;
+  stroke: #c1272d;
+  fill: #fff;
+}
+
+.small-circle-gradient {
+  fill: url(#grad1);
+  opacity: 0.43;
+}
+.small-circle {
+  fill: #c1272d;
+  stroke: #c1272d;
+}
+
+.player-number-text {
+  pointer-events: none;
+  font-size: 78.76px;
+  font-family: MS-PGothic, MS PGothic;
+}
+.player-number-text::selection {
+  background: none;
+}
+.hockey-stick {
+  fill: #1a1a1a;
+}
+.fake-circle {
+  opacity: 0;
+}
+
+.player-circle-red {
+  fill: url(#player-circle-gradient-red);
+}
+.player-view-zone-red {
+  fill: url(#view-zone-red);
+  opacity: 0.6;
+}
+.player-circle-blue {
+  fill: url(#player-circle-gradient-blue);
+}
+.player-view-zone-blue {
+  fill: url(#view-zone-blue);
+  opacity: 0.6;
+}
+.player-circle-yellow {
+  fill: url(#player-circle-gradient-yellow);
+}
+.player-view-zone-yellow {
+  fill: url(#view-zone-yellow);
+  opacity: 0.6;
+}
+
+.interactive-player-position {
+  /*fill: url(#interactive-player-position-gradient);*/
+  fill: #8aff8a;
+  opacity: 0.7;
+}

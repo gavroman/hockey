@@ -1,0 +1,31 @@
+.control-panel {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.instrument-button {
+    cursor: default;
+    margin-right: 10px;
+    height: 27px;
+    width: 70px;
+    color: black;
+    background-color: white;
+    border: solid 3px black;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-instrument {
+    background-color: #75ff75;
+}
+
+.color-picker {
+    height: 25px;
+    width: 70px;
+    border: solid 3px black;
+    border-radius: 18px;
+}
