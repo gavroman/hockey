@@ -1,4 +1,4 @@
-#Learn React
+# Learn React
 Приложение создано в целях изучения React.<br> 
 Генерирует графику с помощью `SVG` и `canvas`.
 
