@@ -19,7 +19,7 @@ class VDArrow extends React.Component {
             shadowOffset: this.props.shadowOffset ||  { x: 5, y: 5 },
             shadowOpacity: 0,
             arrowRef : React.createRef(),
-        }
+        };
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
         this.destroy = this.destroy.bind(this);
@@ -32,7 +32,7 @@ class VDArrow extends React.Component {
                 pointerWidth : this.state.pointerWidth + 2,
                 strokeWidth : this.state.strokeWidth * 2,
                 shadowOpacity : 0.4,
-                idented : true,
+                highlighted : true,
             });
         } else if (this.props.erasing) {
             this.props.erase(this.state.id);
@@ -40,13 +40,13 @@ class VDArrow extends React.Component {
     }
 
     handleMouseOut(e) {
-        if (this.state.idented) {
+        if (this.state.highlighted) {
             this.setState({
                 pointerLength : this.state.pointerLength - 2,
                 pointerWidth : this.state.pointerWidth - 2,
                 strokeWidth : this.state.strokeWidth / 2,
                 shadowOpacity : 0,
-                idented : false,
+                highlighted : false,
             });
         }
     }

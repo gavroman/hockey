@@ -1,14 +1,13 @@
 import React from 'react';
 import {Line} from 'react-konva';
 
-class VDPoligon extends React.Component {
+class VDPolygon extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             id : this.props.id,
             x : this.props.x || 0,
             y : this.props.y || 0,
-            points : this.props.points || [],
             fill : this.props.color || '#5ac314',
             stroke : 'black',
             opacity : 0.5,
@@ -17,8 +16,9 @@ class VDPoligon extends React.Component {
             shadowBlur: this.props.shadowBlur ||  10,
             shadowOffset: this.props.shadowOffset ||  { x: 5, y: 5 },
             shadowOpacity: 0,
-            poligonRef : React.createRef(),
-        }
+            polygonRef : React.createRef(),
+            points : this.props.points || [],
+        };
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
         this.destroy = this.destroy.bind(this);
@@ -29,7 +29,7 @@ class VDPoligon extends React.Component {
             this.setState({
                 strokeWidth : this.state.strokeWidth + 2,
                 shadowOpacity: 0.4,
-                idented : true,
+                highlighted : true,
             });
         } else if (this.props.erasing) {
             this.props.erase(this.state.id);
@@ -37,34 +37,38 @@ class VDPoligon extends React.Component {
     }
 
     handleMouseOut(e) {
-        if (this.state.idented) {
+        if (this.state.highlighted) {
             this.setState({
                 strokeWidth : this.state.strokeWidth - 2,
                 shadowOpacity: 0,
-                idented : false,
+                highlighted : false,
             });
         }
     }
 
     destroy() {
-        this.state.poligonRef.current.destroy();
+        this.state.polygonRef.current.destroy();
     }
 
     forceUpdate() {
-        this.state.poligonRef.current.draw();
+        this.state.polygonRef.current.draw();
     }
 
     render() {
+        const points = [];
+        this.state.points.forEach(point => {
+              points.push(point.x, point.y);
+        });
         return (
             <Line
                 onMouseOver = {this.handleMouseOver}
                 onMouseOut = {this.handleMouseOut}
                 onMouseDown = { (e) => {e.cancelBubble = true;} }
                 onDragEnd = { (e) => {this.props.onDragEnd(e, this.state.id)}}
-                ref = {this.state.poligonRef}
+                ref = {this.state.polygonRef}
                 x = {this.state.x}
                 y = {this.state.y}
-                points = {this.state.points}
+                points = {points}
                 fill = {this.state.fill}
                 opacity = {this.state.opacity}
                 stroke = {this.state.stroke}
@@ -80,4 +84,4 @@ class VDPoligon extends React.Component {
     }
 }
 
-export default VDPoligon;
+export default VDPolygon;
